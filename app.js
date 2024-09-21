@@ -1,6 +1,8 @@
 let skinArrDefold = ['./img/coin.png', './img/coin2.gif', './img/coin3.gif']
-let skinCoinArrDefold = ['./img/coin_floor.png', './img/coin_floor2.png', './img/coin_floor3.png']
+let skinCoinArrDefold = ['./img/coin_floor.gif', './img/coin_floor2.gif', './img/coin_floor3.gif']
 let skinSwapCount = 0
+let coin_floor2 = false
+let coin_floor3 = false
 
 let pos = 0
 let savePosition = 0
@@ -77,8 +79,6 @@ function SwapPos() {
 
 $(document).on("click", function (e) {
 
-    CoinUp()
-
     let posStr = 'c' + pos //конвертируем для сравнение
 
     let className = $(e.target).attr("class") //получаем имя класса
@@ -109,6 +109,7 @@ $(document).on("click", function (e) {
         }
 
         // console.log("boost aktive")
+        CoinUp()
 
     }
 
@@ -181,16 +182,18 @@ function RecSave() {
 }
 
 function CoinUp() {
-    if (point >= 5 && point <= 10) {
+    if (point >= 5 && point <= 10 && coin_floor2 === false) {
         pointUp = 2
         skinSwapCount = 1
         atr('.coin_floor', skinCoinArrDefold[skinSwapCount])
+        coin_floor2 = true
     }
 
-    if (point >= 11 && point <= 15) {
+    if (point >= 11 && point <= 15 && coin_floor3 === false) {
         pointUp = 4
         skinSwapCount = 2
         atr('.coin_floor', skinCoinArrDefold[skinSwapCount])
+        coin_floor3 = true
     }
 }
 
