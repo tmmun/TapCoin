@@ -182,14 +182,14 @@ function RecSave() {
 }
 
 function CoinUp() {
-    if (point >= 5 && point <= 10 && coin_floor2 === false) {
+    if (point >= 20 && point <= 40 && coin_floor2 === false) {
         pointUp = 2
         skinSwapCount = 1
         atr('.coin_floor', skinCoinArrDefold[skinSwapCount])
         coin_floor2 = true
     }
 
-    if (point >= 11 && point <= 15 && coin_floor3 === false) {
+    if (point >= 41 && point <= 60 && coin_floor3 === false) {
         pointUp = 4
         skinSwapCount = 2
         atr('.coin_floor', skinCoinArrDefold[skinSwapCount])
